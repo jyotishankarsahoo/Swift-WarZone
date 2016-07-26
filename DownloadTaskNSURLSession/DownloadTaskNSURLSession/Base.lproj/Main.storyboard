@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DownloadTaskNSURLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-5S-BbE">
+                                <rect key="frame" x="239" y="285" width="122" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="9tQ-1P-4kx"/>
+                                    <constraint firstAttribute="height" constant="30" id="NdT-4z-jz4"/>
+                                </constraints>
+                                <state key="normal" title="Click to download"/>
+                                <connections>
+                                    <action selector="startDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F91-hf-L4j"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-eF-gwg">
+                                <rect key="frame" x="225" y="323" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="1mq-GN-3D3"/>
+                                    <constraint firstAttribute="width" constant="150" id="Fx7-eI-Zhr"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOn-NF-dbG">
+                                <rect key="frame" x="225" y="342" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lVo-IV-aj0"/>
+                                    <constraint firstAttribute="width" constant="30" id="pQ5-ha-NUQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="resumeDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWa-ss-K4D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbR-hi-qAk">
+                                <rect key="frame" x="285" y="342" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="||"/>
+                                <connections>
+                                    <action selector="pauseDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c7d-pL-PIJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pej-cc-hHy">
+                                <rect key="frame" x="345" y="342" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="stopDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7P-ev-mP2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="centerX" secondItem="ADS-eF-gwg" secondAttribute="centerX" id="2AX-Rt-vSw"/>
+                            <constraint firstItem="ADS-eF-gwg" firstAttribute="top" secondItem="5Eb-5S-BbE" secondAttribute="bottom" constant="8" id="7MQ-tE-jso"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="top" secondItem="GOn-NF-dbG" secondAttribute="top" id="8Id-Vc-sVb"/>
+                            <constraint firstItem="5Eb-5S-BbE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOL-QY-cmX"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="top" secondItem="ADS-eF-gwg" secondAttribute="bottom" constant="17" id="IMU-MJ-pjv"/>
+                            <constraint firstItem="GOn-NF-dbG" firstAttribute="leading" secondItem="ADS-eF-gwg" secondAttribute="leading" id="YUi-cg-25W"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="bottom" secondItem="GOn-NF-dbG" secondAttribute="bottom" id="ccv-FS-HS6"/>
+                            <constraint firstItem="5Eb-5S-BbE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fjF-LF-X9E"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="baseline" secondItem="GOn-NF-dbG" secondAttribute="baseline" id="h4d-wp-VGo"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="baseline" secondItem="GOn-NF-dbG" secondAttribute="baseline" id="i1A-bl-oPB"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="baseline" secondItem="pej-cc-hHy" secondAttribute="firstBaseline" id="jXh-Cg-Mk6"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="top" secondItem="pej-cc-hHy" secondAttribute="top" id="lrt-E9-Oog"/>
+                            <constraint firstItem="ADS-eF-gwg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mw9-vT-hr8"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="firstBaseline" secondItem="pej-cc-hHy" secondAttribute="baseline" id="nVw-h5-bKL"/>
+                            <constraint firstItem="pej-cc-hHy" firstAttribute="leading" secondItem="IbR-hi-qAk" secondAttribute="trailing" constant="30" id="tZS-Zn-gHp"/>
+                            <constraint firstItem="IbR-hi-qAk" firstAttribute="baseline" secondItem="GOn-NF-dbG" secondAttribute="baseline" id="uyg-ve-PnH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h4d-wp-VGo"/>
+                                <exclude reference="i1A-bl-oPB"/>
+                                <exclude reference="uyg-ve-PnH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="progressBar" destination="ADS-eF-gwg" id="yN7-Kv-sA4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+    </scenes>
+</document>
