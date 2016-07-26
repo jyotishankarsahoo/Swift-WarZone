@@ -12,6 +12,7 @@
 		38DBE3451D4747F2007B69DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DBE3431D4747F2007B69DE /* Main.storyboard */; };
 		38DBE3471D4747F2007B69DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DBE3461D4747F2007B69DE /* Assets.xcassets */; };
 		38DBE34A1D4747F2007B69DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DBE3481D4747F2007B69DE /* LaunchScreen.storyboard */; };
+		38DBE3521D47566A007B69DE /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DBE3511D47566A007B69DE /* TodoListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		38DBE3461D4747F2007B69DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38DBE3491D4747F2007B69DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38DBE34B1D4747F2007B69DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DBE3511D47566A007B69DE /* TodoListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				38DBE33F1D4747F2007B69DE /* AppDelegate.swift */,
 				38DBE3411D4747F2007B69DE /* ViewController.swift */,
+				38DBE3511D47566A007B69DE /* TodoListModel.swift */,
 				38DBE3431D4747F2007B69DE /* Main.storyboard */,
 				38DBE3461D4747F2007B69DE /* Assets.xcassets */,
 				38DBE3481D4747F2007B69DE /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				38DBE3421D4747F2007B69DE /* ViewController.swift in Sources */,
 				38DBE3401D4747F2007B69DE /* AppDelegate.swift in Sources */,
+				38DBE3521D47566A007B69DE /* TodoListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
