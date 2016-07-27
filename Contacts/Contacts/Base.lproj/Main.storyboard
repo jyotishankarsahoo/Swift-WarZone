@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D9U-hM-75T">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="cBf-62-MPJ">
+            <objects>
+                <tableViewController id="6Cg-zT-7ov" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Y7-0M-Sdm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="6Cg-zT-7ov" id="ZDb-gN-a92"/>
+                            <outlet property="delegate" destination="6Cg-zT-7ov" id="qdO-OC-0l5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" id="eKe-Lt-hF3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nh6-fQ-RGN">
+                            <connections>
+                                <segue destination="cIc-QH-U6j" kind="presentation" id="0br-a0-X5L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8s-vz-HHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713" y="65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uPm-p2-Ymc">
+            <objects>
+                <navigationController id="cIc-QH-U6j" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TfM-Go-lLb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sbf-Mk-kjo" kind="relationship" relationship="rootViewController" id="neu-Hd-FLS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bne-ju-nQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="65"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="wrc-Wd-qEK">
+            <objects>
+                <viewController id="Sbf-Mk-kjo" customClass="NewContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dsW-vj-WZk"/>
+                        <viewControllerLayoutGuide type="bottom" id="r04-bH-4kJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kER-2L-jfO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7M-Vu-L0K">
+                                <rect key="frame" x="20" y="76" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l01-aw-W2R">
+                                <rect key="frame" x="123" y="72" width="230" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="aDj-60-j1j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkM-us-Det">
+                                <rect key="frame" x="20" y="120" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q48-ry-NZG">
+                                <rect key="frame" x="123" y="115" width="230" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8Q-hS-dhp">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="67S-1a-RPe"/>
+                                    <constraint firstAttribute="height" constant="240" id="tPN-E4-5JL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="fkM-us-Det" secondAttribute="leading" id="2PB-WL-5vh"/>
+                            <constraint firstItem="q48-ry-NZG" firstAttribute="leading" secondItem="fkM-us-Det" secondAttribute="trailing" constant="21" id="5ft-tN-w69"/>
+                            <constraint firstItem="X8Q-hS-dhp" firstAttribute="centerY" secondItem="kER-2L-jfO" secondAttribute="centerY" id="E52-OK-GER"/>
+                            <constraint firstItem="fkM-us-Det" firstAttribute="top" secondItem="T7M-Vu-L0K" secondAttribute="bottom" constant="23" id="GQC-1J-MuB"/>
+                            <constraint firstItem="l01-aw-W2R" firstAttribute="top" secondItem="dsW-vj-WZk" secondAttribute="bottom" constant="8" id="NZO-fW-mOE"/>
+                            <constraint firstItem="X8Q-hS-dhp" firstAttribute="centerX" secondItem="kER-2L-jfO" secondAttribute="centerX" id="Pze-6J-Urg"/>
+                            <constraint firstItem="q48-ry-NZG" firstAttribute="top" secondItem="l01-aw-W2R" secondAttribute="bottom" constant="13" id="UDG-Nl-jjf"/>
+                            <constraint firstItem="T7M-Vu-L0K" firstAttribute="top" secondItem="dsW-vj-WZk" secondAttribute="bottom" constant="12" id="Ujj-0G-I4j"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="T7M-Vu-L0K" secondAttribute="leading" id="WjN-Ip-SMK"/>
+                            <constraint firstItem="l01-aw-W2R" firstAttribute="leading" secondItem="T7M-Vu-L0K" secondAttribute="trailing" constant="20" id="lRN-9E-awQ"/>
+                            <constraint firstItem="q48-ry-NZG" firstAttribute="width" secondItem="l01-aw-W2R" secondAttribute="width" id="ohA-93-C2N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact" id="gNT-Yb-fbq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ULa-Fg-i63">
+                            <connections>
+                                <segue destination="zw3-U2-dg0" kind="unwind" unwindAction="cancelToContactsViewController:" id="Mdo-il-hEx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="PtV-z2-udA">
+                            <connections>
+                                <segue destination="zw3-U2-dg0" kind="unwind" unwindAction="addContactToContactsViewController:" id="kHZ-Al-z0L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="defaultImage" destination="X8Q-hS-dhp" id="ji3-Ka-SDu"/>
+                        <outlet property="firstNameTextField" destination="l01-aw-W2R" id="Hv5-2s-MdT"/>
+                        <outlet property="lastNameTextField" destination="q48-ry-NZG" id="krS-Cq-MFv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89k-Gb-i5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zw3-U2-dg0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lce-40-cXz">
+            <objects>
+                <navigationController id="D9U-hM-75T" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qqj-ox-Rdn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6Cg-zT-7ov" kind="relationship" relationship="rootViewController" id="116-XC-AL1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vb6-4R-Uyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1378" y="65"/>
+        </scene>
+    </scenes>
+</document>
