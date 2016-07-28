@@ -16,6 +16,8 @@
 		38ED3C021D487F480066CC86 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED3C011D487F480066CC86 /* Contact.swift */; };
 		38ED3C041D4887040066CC86 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED3C031D4887040066CC86 /* NewContactViewController.swift */; };
 		38ED3C071D48B6610066CC86 /* DefaultImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ED3C061D48B6610066CC86 /* DefaultImage.m */; };
+		38F59F601D49C8E0007C834A /* ExistingContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F59F5F1D49C8E0007C834A /* ExistingContactViewController.swift */; };
+		38F59F621D4A041E007C834A /* EditContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F59F611D4A041E007C834A /* EditContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		38ED3C031D4887040066CC86 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		38ED3C051D48B6610066CC86 /* DefaultImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultImage.h; sourceTree = "<group>"; };
 		38ED3C061D48B6610066CC86 /* DefaultImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultImage.m; sourceTree = "<group>"; };
+		38F59F5F1D49C8E0007C834A /* ExistingContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingContactViewController.swift; sourceTree = "<group>"; };
+		38F59F611D4A041E007C834A /* EditContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				38ED3C011D487F480066CC86 /* Contact.swift */,
 				38ED3C001D487F470066CC86 /* Contacts-Bridging-Header.h */,
 				38ED3C031D4887040066CC86 /* NewContactViewController.swift */,
+				38F59F5F1D49C8E0007C834A /* ExistingContactViewController.swift */,
+				38F59F611D4A041E007C834A /* EditContact.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -165,8 +171,10 @@
 				38ED3C021D487F480066CC86 /* Contact.swift in Sources */,
 				38ED3C041D4887040066CC86 /* NewContactViewController.swift in Sources */,
 				38ED3BF11D4872250066CC86 /* ContactsViewController.m in Sources */,
+				38F59F601D49C8E0007C834A /* ExistingContactViewController.swift in Sources */,
 				38ED3BEE1D4872250066CC86 /* AppDelegate.m in Sources */,
 				38ED3BEB1D4872250066CC86 /* main.m in Sources */,
+				38F59F621D4A041E007C834A /* EditContact.swift in Sources */,
 				38ED3C071D48B6610066CC86 /* DefaultImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +329,7 @@
 				38ED3BFF1D4872250066CC86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

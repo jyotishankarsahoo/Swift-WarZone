@@ -9,8 +9,13 @@
 import Foundation
 
 class Contact: NSObject {
-    let name : String
-    init(contactName : String) {
-        name = contactName
+    var firstName : String
+    var lastName : String
+    var fullName : String{
+        return firstName + lastName
+    }
+    init(firstName : String , lastName : String) {
+        self.firstName = firstName
+        self.lastName = lastName
     }
 }

@@ -7,7 +7,6 @@
 //
 
 #import "ContactsViewController.h"
-#import "Contacts-Swift.h"
 
 @interface ContactsViewController ()
 
@@ -22,9 +21,9 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
    self =  [super initWithCoder:aDecoder];
     if (self) {
-        Contact *c1 = [[Contact alloc] initWithContactName:@"John"];
-        Contact *c2 = [[Contact alloc] initWithContactName:@"Ortan"];
-        Contact *c3 = [[Contact alloc] initWithContactName:@"Romen"];
+        Contact *c1 = [[Contact alloc] initWithFirstName:@"John" lastName:@"Cena"];
+        Contact *c2 = [[Contact alloc] initWithFirstName:@"Randy" lastName:@"Orten"];
+        Contact *c3 = [[Contact alloc] initWithFirstName:@"Seth" lastName:@"Rolens"];
         self.contactList = [[NSMutableArray alloc] initWithArray:@[c1 ,c2,c3]] ;
     }
     return self;
@@ -50,8 +49,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [self.contactList[indexPath.row] name];
+    cell.textLabel.text = [self.contactList[indexPath.row] fullName];
     return cell;
+}
+
+#pragma mark - Tableview  delegate
+// Silver Challenge
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ExistingContactViewController *existingController = [self.storyboard instantiateViewControllerWithIdentifier:@"existingContactViewControllerIdentifier"];
+    existingController.firstName = [self.contactList[indexPath.row] firstName];
+    existingController.lastName = [self.contactList[indexPath.row] lastName];
+    existingController.delegate = self;
+    [self.navigationController pushViewController:existingController animated:YES];
 }
 
 #pragma mark - Segue action
@@ -62,11 +71,19 @@
 
 -(IBAction)addContactToContactsViewController:(UIStoryboardSegue *)segue{
     NewContactViewController *contactViewController = segue.sourceViewController;
-    NSString *contactInfo = [NSString stringWithFormat:@"%@ %@",contactViewController.firstNameTextField.text,contactViewController.lastNameTextField.text];
-    Contact *newContact = [[Contact alloc] initWithContactName:contactInfo];
+    Contact *newContact = [[Contact alloc] initWithFirstName:contactViewController.firstNameTextField.text lastName:contactViewController.lastNameTextField.text];
     [self.contactList addObject:newContact];
     [self.tableView reloadData];
     
+}
+
+#pragma mark - Edit Contact  delegate
+-(void)populateContactInfo:(NSString *)firstName lastName:(NSString *)lastName{
+    NSInteger index = [self.tableView indexPathForSelectedRow].row;
+    [self.contactList[index] setFirstName:firstName];
+    [self.contactList[index] setLastName:lastName];
+    [self.tableView reloadData];
+
 }
 
 @end
