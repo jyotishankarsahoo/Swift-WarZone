@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		38B168561D504FDE00CB92ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B168551D504FDE00CB92ED /* MapKit.framework */; };
 		38B168581D5053AC00CB92ED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B168571D5053AC00CB92ED /* MapViewController.swift */; };
+		38B1685A1D50833600CB92ED /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B168591D50833600CB92ED /* WebViewController.swift */; };
+		38B1685C1D50838D00CB92ED /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B1685B1D50838D00CB92ED /* WebKit.framework */; };
 		38F1CA531D4F0D7900F38CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1CA521D4F0D7900F38CF6 /* AppDelegate.swift */; };
 		38F1CA581D4F0D7900F38CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F1CA561D4F0D7900F38CF6 /* Main.storyboard */; };
 		38F1CA5A1D4F0D7900F38CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F1CA591D4F0D7900F38CF6 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		38B168551D504FDE00CB92ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		38B168571D5053AC00CB92ED /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		38B168591D50833600CB92ED /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		38B1685B1D50838D00CB92ED /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		38F1CA4F1D4F0D7900F38CF6 /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F1CA521D4F0D7900F38CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F1CA571D4F0D7900F38CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B1685C1D50838D00CB92ED /* WebKit.framework in Frameworks */,
 				38B168561D504FDE00CB92ED /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +48,7 @@
 		38F1CA461D4F0D7900F38CF6 = {
 			isa = PBXGroup;
 			children = (
+				38B1685B1D50838D00CB92ED /* WebKit.framework */,
 				38B168551D504FDE00CB92ED /* MapKit.framework */,
 				38F1CA511D4F0D7900F38CF6 /* WorldTrotter */,
 				38F1CA501D4F0D7900F38CF6 /* Products */,
@@ -63,6 +69,7 @@
 				38F1CA521D4F0D7900F38CF6 /* AppDelegate.swift */,
 				38F1CA641D4F50E100F38CF6 /* ConversionViewController.swift */,
 				38B168571D5053AC00CB92ED /* MapViewController.swift */,
+				38B168591D50833600CB92ED /* WebViewController.swift */,
 				38F1CA561D4F0D7900F38CF6 /* Main.storyboard */,
 				38F1CA591D4F0D7900F38CF6 /* Assets.xcassets */,
 				38F1CA5B1D4F0D7900F38CF6 /* LaunchScreen.storyboard */,
@@ -145,6 +152,7 @@
 				38F1CA651D4F50E100F38CF6 /* ConversionViewController.swift in Sources */,
 				38B168581D5053AC00CB92ED /* MapViewController.swift in Sources */,
 				38F1CA531D4F0D7900F38CF6 /* AppDelegate.swift in Sources */,
+				38B1685A1D50833600CB92ED /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -99,6 +99,16 @@
             </objects>
             <point key="canvasLocation" x="1290" y="540"/>
         </scene>
+        <!--Webview-->
+        <scene sceneID="tOl-aK-Tpu">
+            <objects>
+                <viewController id="jvP-Qd-qTQ" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Webview" id="JC9-32-qc4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6O-u2-Mi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1929" y="540"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LyW-yD-jI3">
             <objects>
@@ -111,6 +121,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Nx4-rs-nwA"/>
                         <segue destination="VSG-nd-bkS" kind="relationship" relationship="viewControllers" id="FQ7-aL-ALf"/>
+                        <segue destination="jvP-Qd-qTQ" kind="relationship" relationship="viewControllers" id="hDa-yW-63h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zd0-fl-PmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
