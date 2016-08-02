@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7vn-oB-N4p">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Conversion View Controller-->
+        <!--Map-->
+        <scene sceneID="k3e-ap-kXj">
+            <objects>
+                <viewController id="VSG-nd-bkS" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2S9-bP-GHC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="7NL-fM-02y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ee-qv-MaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588" y="547"/>
+        </scene>
+        <!--Conversion-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,6 +88,7 @@
                             <outletCollection property="gestureRecognizers" destination="kxh-2d-oTV" appends="YES" id="LYb-Io-4Kq"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Conversion" image="ConvertIcon" id="8bH-A1-dzD"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="d3O-s6-skQ" id="Eag-uu-ek4"/>
                         <outlet property="textfield" destination="zTF-gp-hRI" id="vU6-Ec-0zW"/>
@@ -86,7 +101,29 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="293" y="467"/>
+            <point key="canvasLocation" x="1290" y="540"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LyW-yD-jI3">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7vn-oB-N4p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="R0w-B4-jNN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Nx4-rs-nwA"/>
+                        <segue destination="VSG-nd-bkS" kind="relationship" relationship="viewControllers" id="FQ7-aL-ALf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zd0-fl-PmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224" y="547"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="49" height="33"/>
+        <image name="MapIcon" width="49" height="33"/>
+    </resources>
 </document>
