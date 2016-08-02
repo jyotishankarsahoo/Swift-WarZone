@@ -10,22 +10,25 @@ import Foundation
 import UIKit
 import MapKit
 
-class MapViewController : UIViewController {
+class MapViewController : UIViewController,MKMapViewDelegate {
     
     var mapView : MKMapView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Map View loaded")
+
     }
     
     override func loadView() {
         super.loadView()
         
         //create mapview
-        mapView = MKMapView()
+        mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        mapView?.delegate = self
         //Set it to the viewcontroller's view
         view = mapView
+        mapView?.showsUserLocation = true
         
         //create segment view
         let segmentView = UISegmentedControl(items: ["Standard","Hybrid","Satellite"])
