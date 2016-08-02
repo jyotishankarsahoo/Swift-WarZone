@@ -62,11 +62,11 @@
 			children = (
 				38F1CA521D4F0D7900F38CF6 /* AppDelegate.swift */,
 				38F1CA641D4F50E100F38CF6 /* ConversionViewController.swift */,
+				38B168571D5053AC00CB92ED /* MapViewController.swift */,
 				38F1CA561D4F0D7900F38CF6 /* Main.storyboard */,
 				38F1CA591D4F0D7900F38CF6 /* Assets.xcassets */,
 				38F1CA5B1D4F0D7900F38CF6 /* LaunchScreen.storyboard */,
 				38F1CA5E1D4F0D7900F38CF6 /* Info.plist */,
-				38B168571D5053AC00CB92ED /* MapViewController.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";
