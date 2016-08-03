@@ -28,7 +28,8 @@ class MapViewController : UIViewController,MKMapViewDelegate {
         mapView?.delegate = self
         //Set it to the viewcontroller's view
         view = mapView
-        mapView?.showsUserLocation = true
+        //TODO: - Need to implement Silver nad Gold Challenge
+        //mapView?.showsUserLocation = true
         
         //create segment view
         let segmentView = UISegmentedControl(items: ["Standard","Hybrid","Satellite"])
