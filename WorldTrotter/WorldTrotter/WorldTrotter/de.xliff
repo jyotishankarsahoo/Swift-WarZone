@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="WorldTrotter/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body/>
+  </file>
+  <file original="WorldTrotter/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="7NL-fM-02y.title">
+        <source>Map</source>
+        <target>Karte</target>
+        <note>Class = "UITabBarItem"; title = "Map"; ObjectID = "7NL-fM-02y";</note>
+      </trans-unit>
+      <trans-unit id="7q2-HI-3Ty.text">
+        <source>Degrees Fahrenheit</source>
+        <target>Grad Fahrenheit</target>
+        <note>Class = "UILabel"; text = "Degrees Fahrenheit"; ObjectID = "7q2-HI-3Ty";</note>
+      </trans-unit>
+      <trans-unit id="8bH-A1-dzD.title">
+        <source>Conversion</source>
+        <target>Umwandlung</target>
+        <note>Class = "UITabBarItem"; title = "Conversion"; ObjectID = "8bH-A1-dzD";</note>
+      </trans-unit>
+      <trans-unit id="JC9-32-qc4.title">
+        <source>Webview</source>
+        <target>Webview</target>
+        <note>Class = "UITabBarItem"; title = "Webview"; ObjectID = "JC9-32-qc4";</note>
+      </trans-unit>
+      <trans-unit id="d3O-s6-skQ.text">
+        <source>100</source>
+        <target>100</target>
+        <note>Class = "UILabel"; text = "100"; ObjectID = "d3O-s6-skQ";</note>
+      </trans-unit>
+      <trans-unit id="w15-Kq-kfR.text">
+        <source>is really</source>
+        <target>Ist wirklich</target>
+        <note>Class = "UILabel"; text = "is really"; ObjectID = "w15-Kq-kfR";</note>
+      </trans-unit>
+      <trans-unit id="z66-PJ-wRq.text">
+        <source>Degrees Celsius</source>
+        <target>Grad Celsius</target>
+        <note>Class = "UILabel"; text = "Degrees Celsius"; ObjectID = "z66-PJ-wRq";</note>
+      </trans-unit>
+      <trans-unit id="zTF-gp-hRI.placeholder">
+        <source>Value</source>
+        <target>Wert</target>
+        <note>Class = "UITextField"; placeholder = "Value"; ObjectID = "zTF-gp-hRI";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/Info.plist" source-language="en" datatype="plaintext" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="Hybrid">
+        <source>Hybrid</source>
+        <target>Hybrid</target>
+        <note>Hybrid Map View</note>
+      </trans-unit>
+      <trans-unit id="Satellite">
+        <source>Satellite</source>
+        <target>Sat.</target>
+        <note>Satellite Map View</note>
+      </trans-unit>
+      <trans-unit id="Standard">
+        <source>Standard</source>
+        <target>Standard</target>
+        <note>Standard Map View</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

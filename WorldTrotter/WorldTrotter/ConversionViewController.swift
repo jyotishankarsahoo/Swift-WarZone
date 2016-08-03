@@ -40,8 +40,8 @@ class ConversionViewController: UIViewController , UITextFieldDelegate{
     
     @IBAction func fahrenheitFieldEditingChanged(textField : UITextField){
         
-        if let text = textField.text , value = Double(text){
-            fahrenheitValue = value
+        if let text = textField.text , value = numberFormatter.numberFromString(text){
+            fahrenheitValue = Double(value)
         }else{
             fahrenheitValue = nil
         }
@@ -84,15 +84,20 @@ class ConversionViewController: UIViewController , UITextFieldDelegate{
     
     //MARK: - UITextFieldDelegate
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool{
+
+        let currentLocale = NSLocale.currentLocale()
+        let decimalSeparator = currentLocale.objectForKey(NSLocaleDecimalSeparator) as! String
         
-        let exsitingTextHasDecimal = textField.text?.rangeOfString(".")
-        let replacementTextHasDecimal = string.rangeOfString(".")
+        let exsitingTextHasDecimal = textField.text?.rangeOfString(decimalSeparator)
+        let replacementTextHasDecimal = string.rangeOfString(decimalSeparator)
         
         if string.isEmpty {
             return true
         }
         
-        let charachterSet = NSCharacterSet.init(charactersInString: "0123456789.")
+        //Bronze Challenge
+
+        let charachterSet = NSCharacterSet.init(charactersInString: "0123456789\(decimalSeparator)")
         
         guard let _ = string.rangeOfCharacterFromSet(charachterSet) else {
             return false
