@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         }
         self.questionLabel.text = questions[currentQuestionIndex]
         self.answerLabel.text = "???"
+        self.animateLabel()
     }
     
     @IBAction func showAnswer(sender: AnyObject) {
@@ -38,6 +39,11 @@ class ViewController: UIViewController {
     }
     
     //MARK: View Lifecycle
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.questionLabel.alpha = 0.5
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +54,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //MARK: - Animation
+    
+    func animateLabel()  {
+        let animationClousre = {() -> Void in
+        self.questionLabel.alpha = 1
+        }
+        
+        UIView.animateWithDuration(2, animations: animationClousre)
+    }
+    
+    
 
 }
 
