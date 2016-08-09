@@ -70,7 +70,6 @@ class ViewController: UIViewController {
     //MARK: - Animation
     
     func animateLabel()  {
-        
         self.view.layoutIfNeeded()
                 
         //Silver Challenge
@@ -86,6 +85,5 @@ class ViewController: UIViewController {
                 self.updateOffSet()
         }
     }
-    
 }
 
