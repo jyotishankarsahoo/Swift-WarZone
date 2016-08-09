@@ -11,6 +11,7 @@ import UIKit
 class ItemsViewController: UITableViewController  {
     var itemStore : ItemStore!
     
+    //MARK: - Viewcontroller Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
@@ -18,7 +19,7 @@ class ItemsViewController: UITableViewController  {
         tableView.contentInset = insects
         tableView.scrollIndicatorInsets = insects
     }
-    
+    //MARK: - Data source delegate method overriden
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
