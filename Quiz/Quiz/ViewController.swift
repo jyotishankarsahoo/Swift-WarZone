@@ -10,10 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var currentQuestionLabel: UILabel!
     
     @IBOutlet weak var answerLabel: UILabel!
     
+    @IBOutlet weak var nextQuestionLabel : UILabel!
+    
+    @IBOutlet weak var currentQuestionCenterXConstant : NSLayoutConstraint!
+    
+    @IBOutlet weak var nextQuestionCenterXConstant : NSLayoutConstraint!
     
     //Model layer
     
@@ -29,7 +34,7 @@ class ViewController: UIViewController {
         if currentQuestionIndex == answers.count {
             currentQuestionIndex = 0
         }
-        self.questionLabel.text = questions[currentQuestionIndex]
+        self.nextQuestionLabel.text = questions[currentQuestionIndex]
         self.answerLabel.text = "???"
         self.animateLabel()
     }
@@ -42,12 +47,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.questionLabel.alpha = 0.5
+        self.currentQuestionLabel.alpha = 1
+        self.nextQuestionLabel.alpha = 0
+        self.updateOffSet()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.questionLabel.text = questions[currentQuestionIndex]
+        self.currentQuestionLabel.text = questions[currentQuestionIndex]
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,17 +62,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateOffSet(){
+        let screenWidth = self.view.bounds.width
+        self.nextQuestionCenterXConstant.constant = -screenWidth
+    }
+    
     //MARK: - Animation
     
     func animateLabel()  {
-        let animationClousre = {() -> Void in
-        self.questionLabel.alpha = 1
-        }
         
-        UIView.animateWithDuration(2, animations: animationClousre)
+        self.view.layoutIfNeeded()
+                
+        //Silver Challenge
+        UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 1.1, initialSpringVelocity: 1, options: [.CurveEaseInOut], animations: {
+            self.currentQuestionLabel.alpha = 0
+            self.nextQuestionLabel.alpha = 1
+            self.nextQuestionCenterXConstant.constant = 0
+            self.currentQuestionCenterXConstant.constant += self.view.bounds.width
+            self.view.layoutIfNeeded()
+            }) { (_) in
+                swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
+                swap(&self.currentQuestionCenterXConstant, &self.nextQuestionCenterXConstant)
+                self.updateOffSet()
+        }
     }
     
-    
-
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,6 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-DK-3Zi">
+                                <rect key="frame" x="288" y="28" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QJ-6D-Ghn">
                                 <rect key="frame" x="288" y="28" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,19 +52,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1QJ-6D-Ghn" firstAttribute="top" secondItem="ajw-DK-3Zi" secondAttribute="top" id="KIP-04-tdO"/>
                             <constraint firstItem="ajw-DK-3Zi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PyK-rQ-LLb"/>
+                            <constraint firstItem="Sey-cg-qdw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qkh-9R-ynG"/>
+                            <constraint firstItem="1QJ-6D-Ghn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V5E-0m-5df"/>
                             <constraint firstItem="ajw-DK-3Zi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XXQ-Om-Fdr"/>
                             <constraint firstItem="WQm-fr-3Y7" firstAttribute="top" secondItem="Sey-cg-qdw" secondAttribute="bottom" constant="167" id="Yl6-YZ-sc4"/>
                             <constraint firstItem="Ey0-Ki-lHG" firstAttribute="centerX" secondItem="Sey-cg-qdw" secondAttribute="centerX" id="cZv-xn-eHV"/>
                             <constraint firstItem="Sey-cg-qdw" firstAttribute="top" secondItem="ajw-DK-3Zi" secondAttribute="bottom" constant="19" id="eYK-dF-Ziz"/>
                             <constraint firstItem="ajw-DK-3Zi" firstAttribute="centerX" secondItem="Sey-cg-qdw" secondAttribute="centerX" id="fOf-pO-xTX"/>
                             <constraint firstItem="Ey0-Ki-lHG" firstAttribute="top" secondItem="WQm-fr-3Y7" secondAttribute="bottom" constant="19" id="jF9-cf-Y0T"/>
+                            <constraint firstItem="1QJ-6D-Ghn" firstAttribute="top" secondItem="ajw-DK-3Zi" secondAttribute="top" id="oAP-jK-wsD"/>
                             <constraint firstItem="WQm-fr-3Y7" firstAttribute="centerX" secondItem="Sey-cg-qdw" secondAttribute="centerX" id="xrm-ea-PI3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KIP-04-tdO"/>
+                                <exclude reference="fOf-pO-xTX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="WQm-fr-3Y7" id="LGc-Lp-nh5"/>
-                        <outlet property="questionLabel" destination="ajw-DK-3Zi" id="WXB-vL-oXb"/>
+                        <outlet property="currentQuestionCenterXConstant" destination="PyK-rQ-LLb" id="xDJ-OH-LIC"/>
+                        <outlet property="currentQuestionLabel" destination="ajw-DK-3Zi" id="OaE-tv-cqE"/>
+                        <outlet property="nextQuestionCenterXConstant" destination="V5E-0m-5df" id="YcV-OJ-78W"/>
+                        <outlet property="nextQuestionLabel" destination="1QJ-6D-Ghn" id="nmp-Ol-tRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
