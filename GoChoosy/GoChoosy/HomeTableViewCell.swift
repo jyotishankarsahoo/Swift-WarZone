@@ -19,11 +19,6 @@ class HomeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
                 super.awakeFromNib()
-        // Initialization code
-//        let gradient: CAGradientLayer = CAGradientLayer()
-//        gradient.frame = self.bounds
-//        gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
-//        self.layer.insertSublayer(gradient, atIndex: 0)
 
     }
 

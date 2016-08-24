@@ -68,13 +68,15 @@ class HomeViewController: UIViewController , UITableViewDataSource , UITableView
                     vendor.vendorThumbnailImageData = data
                     dispatch_async(dispatch_get_main_queue(), {
                         
-                        let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as! HomeTableViewCell
+                        if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? HomeTableViewCell{
+                            cellToUpdate.vendorThumnailImage.image = UIImage(data: data!)
+                            
+                            cellToUpdate.vendorThumnailImage.layer.addSublayer(gradient)
+                            
+                            cellToUpdate.setNeedsLayout()
+                        }
                         
-                        cellToUpdate.vendorThumnailImage.image = UIImage(data: data!)
-                        
-                        cellToUpdate.vendorThumnailImage.layer.addSublayer(gradient)
-
-                        cellToUpdate.setNeedsLayout()
+                       
                     })
                 }).resume()
             }
