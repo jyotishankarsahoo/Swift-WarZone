@@ -25,7 +25,7 @@ class HomeViewController: UIViewController , UITableViewDataSource , UITableView
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        NetworkManager.sharedmanager.fetchInitialVendorData(NSURL(string: "http://beta.gochoosy.com/api/v7/services/")!) { (result ) -> Void in
+        NetworkManager.sharedmanager.fetchAllMerchantList(NSURL(string: "http://beta.gochoosy.com/api/v7/services/")!) { (result ) -> Void in
             self.vendorList = result
             dispatch_async(dispatch_get_main_queue(),{
                 self.tableView.reloadData()
@@ -66,18 +66,15 @@ class HomeViewController: UIViewController , UITableViewDataSource , UITableView
             }else{
                 NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: vendor.thumbnail)!, completionHandler: { (data, reposnse, error) in
                     vendor.vendorThumbnailImageData = data
+                      if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? HomeTableViewCell{
                     dispatch_async(dispatch_get_main_queue(), {
-                        
-                        if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? HomeTableViewCell{
                             cellToUpdate.vendorThumnailImage.image = UIImage(data: data!)
                             
                             cellToUpdate.vendorThumnailImage.layer.addSublayer(gradient)
                             
                             cellToUpdate.setNeedsLayout()
-                        }
-                        
-                       
                     })
+                }
                 }).resume()
             }
         }

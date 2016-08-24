@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3853D6D31D6DB2E200ACCC4E /* SourceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853D6D21D6DB2E200ACCC4E /* SourceListTableViewController.swift */; };
+		3853D6DC1D6DC3A800ACCC4E /* home_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D41D6DC3A800ACCC4E /* home_nav_icon.png */; };
+		3853D6DD1D6DC3A800ACCC4E /* noti_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D51D6DC3A800ACCC4E /* noti_nav_icon.png */; };
+		3853D6DE1D6DC3A800ACCC4E /* offers_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D61D6DC3A800ACCC4E /* offers_nav_icon.png */; };
+		3853D6DF1D6DC3A800ACCC4E /* orders_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D71D6DC3A800ACCC4E /* orders_nav_icon.png */; };
+		3853D6E01D6DC3A800ACCC4E /* profile_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D81D6DC3A800ACCC4E /* profile_nav_icon.png */; };
+		3853D6E11D6DC3A800ACCC4E /* rate_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6D91D6DC3A800ACCC4E /* rate_nav_icon.png */; };
+		3853D6E21D6DC3A800ACCC4E /* report_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6DA1D6DC3A800ACCC4E /* report_nav_icon.png */; };
+		3853D6E31D6DC3A800ACCC4E /* share_icon_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6DB1D6DC3A800ACCC4E /* share_icon_red.png */; };
+		3853D6E51D6DCD7700ACCC4E /* about_nav_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3853D6E41D6DCD7700ACCC4E /* about_nav_icon.png */; };
+		38B1D54F1D6DA7B900BDFCF2 /* GCMerchantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1D54E1D6DA7B900BDFCF2 /* GCMerchantModel.swift */; };
 		3B71C4421D641E1C00255014 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C4411D641E1C00255014 /* SWRevealViewController.m */; };
 		3B71C4441D6436F800255014 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C4431D6436F800255014 /* HomeViewController.swift */; };
 		3B71C4461D643B2A00255014 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C4451D643B2A00255014 /* ProfileViewController.swift */; };
@@ -23,6 +34,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3853D6D21D6DB2E200ACCC4E /* SourceListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceListTableViewController.swift; sourceTree = "<group>"; };
+		3853D6D41D6DC3A800ACCC4E /* home_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_nav_icon.png; sourceTree = "<group>"; };
+		3853D6D51D6DC3A800ACCC4E /* noti_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noti_nav_icon.png; sourceTree = "<group>"; };
+		3853D6D61D6DC3A800ACCC4E /* offers_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offers_nav_icon.png; sourceTree = "<group>"; };
+		3853D6D71D6DC3A800ACCC4E /* orders_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orders_nav_icon.png; sourceTree = "<group>"; };
+		3853D6D81D6DC3A800ACCC4E /* profile_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_nav_icon.png; sourceTree = "<group>"; };
+		3853D6D91D6DC3A800ACCC4E /* rate_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate_nav_icon.png; sourceTree = "<group>"; };
+		3853D6DA1D6DC3A800ACCC4E /* report_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report_nav_icon.png; sourceTree = "<group>"; };
+		3853D6DB1D6DC3A800ACCC4E /* share_icon_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_icon_red.png; sourceTree = "<group>"; };
+		3853D6E41D6DCD7700ACCC4E /* about_nav_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_nav_icon.png; sourceTree = "<group>"; };
+		38B1D54E1D6DA7B900BDFCF2 /* GCMerchantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCMerchantModel.swift; sourceTree = "<group>"; };
 		3B71C43F1D641E1B00255014 /* GoChoosy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoChoosy-Bridging-Header.h"; sourceTree = "<group>"; };
 		3B71C4401D641E1C00255014 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3B71C4411D641E1C00255014 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -70,6 +92,7 @@
 				3B71C44F1D6463A000255014 /* HomeTableViewCell.swift */,
 				3B71C4451D643B2A00255014 /* ProfileViewController.swift */,
 				3B71C4471D64411700255014 /* OffersViewController.swift */,
+				3853D6D21D6DB2E200ACCC4E /* SourceListTableViewController.swift */,
 			);
 			name = SubViewControllers;
 			sourceTree = "<group>";
@@ -77,6 +100,15 @@
 		3B71C44A1D6447EC00255014 /* Resources	 */ = {
 			isa = PBXGroup;
 			children = (
+				3853D6E41D6DCD7700ACCC4E /* about_nav_icon.png */,
+				3853D6D41D6DC3A800ACCC4E /* home_nav_icon.png */,
+				3853D6D51D6DC3A800ACCC4E /* noti_nav_icon.png */,
+				3853D6D61D6DC3A800ACCC4E /* offers_nav_icon.png */,
+				3853D6D71D6DC3A800ACCC4E /* orders_nav_icon.png */,
+				3853D6D81D6DC3A800ACCC4E /* profile_nav_icon.png */,
+				3853D6D91D6DC3A800ACCC4E /* rate_nav_icon.png */,
+				3853D6DA1D6DC3A800ACCC4E /* report_nav_icon.png */,
+				3853D6DB1D6DC3A800ACCC4E /* share_icon_red.png */,
 				3B71C44B1D64480F00255014 /* menu-icon.png */,
 				3B71C44C1D64480F00255014 /* menu-icon@2x.png */,
 			);
@@ -87,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				3B71C4721D64799500255014 /* GCHomeModel.swift */,
+				38B1D54E1D6DA7B900BDFCF2 /* GCMerchantModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,10 +224,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB9FD741D6029C500562AE0 /* LaunchScreen.storyboard in Resources */,
+				3853D6DC1D6DC3A800ACCC4E /* home_nav_icon.png in Resources */,
+				3853D6E01D6DC3A800ACCC4E /* profile_nav_icon.png in Resources */,
 				3BB9FD711D6029C500562AE0 /* Assets.xcassets in Resources */,
 				3B71C44E1D64480F00255014 /* menu-icon@2x.png in Resources */,
+				3853D6DD1D6DC3A800ACCC4E /* noti_nav_icon.png in Resources */,
+				3853D6E51D6DCD7700ACCC4E /* about_nav_icon.png in Resources */,
 				3BB9FD6F1D6029C500562AE0 /* Main.storyboard in Resources */,
 				3B71C44D1D64480F00255014 /* menu-icon.png in Resources */,
+				3853D6E11D6DC3A800ACCC4E /* rate_nav_icon.png in Resources */,
+				3853D6DE1D6DC3A800ACCC4E /* offers_nav_icon.png in Resources */,
+				3853D6E31D6DC3A800ACCC4E /* share_icon_red.png in Resources */,
+				3853D6E21D6DC3A800ACCC4E /* report_nav_icon.png in Resources */,
+				3853D6DF1D6DC3A800ACCC4E /* orders_nav_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B71C4761D64842000255014 /* NetworkManager.swift in Sources */,
+				38B1D54F1D6DA7B900BDFCF2 /* GCMerchantModel.swift in Sources */,
 				3B71C4731D64799500255014 /* GCHomeModel.swift in Sources */,
 				3B71C4481D64411700255014 /* OffersViewController.swift in Sources */,
+				3853D6D31D6DB2E200ACCC4E /* SourceListTableViewController.swift in Sources */,
 				3B71C4501D6463A000255014 /* HomeTableViewCell.swift in Sources */,
 				3BB9FD6A1D6029C500562AE0 /* AppDelegate.swift in Sources */,
 				3B71C4461D643B2A00255014 /* ProfileViewController.swift in Sources */,

@@ -13,10 +13,10 @@ class NetworkManager {
     static let sharedmanager = NetworkManager()
     
     init() {
-        print(__FUNCTION__)
+        //print(__FUNCTION__)
     }
 
-    func fetchInitialVendorData(url : NSURL , complition : (result : Array<GCHomeModel>) -> Void){
+    func fetchAllMerchantList(url : NSURL , complition : (result : Array<GCHomeModel>) -> Void){
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfig)
         let dataTask = session.dataTaskWithURL(url) { (data, response, error) in
@@ -43,5 +43,9 @@ class NetworkManager {
             }
         }
         dataTask.resume()
+    }
+    
+    func fetchServiceForMerchant(merchantId : String , complition : (Array<AnyObject>)) -> Void {
+        
     }
 }
