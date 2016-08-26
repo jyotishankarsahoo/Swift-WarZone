@@ -11,15 +11,20 @@ import Foundation
 class ItemStore {
     
     var allItems = [Item]()
+    var sortedItems = [Item]()
     
     init(){
         for _ in 0..<5 {
             self.createItem()
         }
+        sortedItems = allItems.sort({ (x, y) -> Bool in
+          return  x.valueInDollar < y.valueInDollar
+        })
+        
     }
     
     func createItem() -> Item {
-        let newItem = Item(name: "John", valueInDollar: 22, serialNumber: "123")
+        let newItem = Item(random : true)
         allItems.append(newItem)
         return newItem
     }
