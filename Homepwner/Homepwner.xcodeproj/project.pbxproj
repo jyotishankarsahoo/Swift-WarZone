@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38BD288B1D74034600868DE0 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD288A1D74034600868DE0 /* ItemCell.swift */; };
 		38F455321D59DA5E00A781E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F455311D59DA5E00A781E6 /* AppDelegate.swift */; };
 		38F455371D59DA5E00A781E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F455351D59DA5E00A781E6 /* Main.storyboard */; };
 		38F455391D59DA5E00A781E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F455381D59DA5E00A781E6 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38BD288A1D74034600868DE0 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		38F4552E1D59DA5E00A781E6 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F455311D59DA5E00A781E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F455361D59DA5E00A781E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				38F455311D59DA5E00A781E6 /* AppDelegate.swift */,
 				38F455431D5A009200A781E6 /* ItemsViewController.swift */,
+				38BD288A1D74034600868DE0 /* ItemCell.swift */,
 				38F455451D5A010600A781E6 /* Item.swift */,
 				38F455471D5A02C000A781E6 /* ItemStore.swift */,
 				38F455351D59DA5E00A781E6 /* Main.storyboard */,
@@ -145,6 +148,7 @@
 				38F455461D5A010600A781E6 /* Item.swift in Sources */,
 				38F455481D5A02C000A781E6 /* ItemStore.swift in Sources */,
 				38F455321D59DA5E00A781E6 /* AppDelegate.swift in Sources */,
+				38BD288B1D74034600868DE0 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +298,7 @@
 				38F455421D59DA5E00A781E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

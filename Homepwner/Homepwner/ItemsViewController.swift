@@ -39,6 +39,8 @@ class ItemsViewController: UITableViewController  {
         tableView.contentInset = insects
         tableView.scrollIndicatorInsets = insects
         tableView.backgroundColor = UIColor.brownColor()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
     }
     //MARK: - Data source delegate method overriden
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +60,8 @@ class ItemsViewController: UITableViewController  {
 
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
+        //let cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell") as! ItemCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ItemCell
         //GOLD Challenge
 //        if indexPath.section == 0 {
 //            cell.textLabel?.text = itemLessThanFive![indexPath.row].name
@@ -67,15 +70,20 @@ class ItemsViewController: UITableViewController  {
 //            cell.textLabel?.text = itemMoreThanFive![indexPath.row].name
 //            cell.detailTextLabel?.text = String (itemMoreThanFive![indexPath.row].valueInDollar)
 //        }
+        cell.updateFont()
         if indexPath.row < itemStore.allItems.count {
-            cell.textLabel?.font = cell.textLabel?.font.fontWithSize(20)
             
-            cell.textLabel?.text = itemStore.allItems[indexPath.row].name
-            cell.detailTextLabel?.text = String (itemStore.allItems[indexPath.row].valueInDollar)
+            cell.nameLabel.text = itemStore.allItems[indexPath.row].name
+            cell.serialNumberLabel.text = itemStore.allItems[indexPath.row].serialNumber
+            cell.valueLabel.text = "$\(String (itemStore.allItems[indexPath.row].valueInDollar))"
+            cell.updateValueLabel((itemStore.allItems[indexPath.row].valueInDollar))
+
         }else{
-            cell.textLabel?.font = cell.textLabel?.font.fontWithSize(20)
+           // cell.nameLabel?.font = cell.nameLabel?.font.fontWithSize(15)
             
-            cell.textLabel?.text = "No More Items!"
+            cell.nameLabel.text = "No More Items!"
+            cell.serialNumberLabel.text = ""
+            cell.valueLabel.text = ""
         }
         
 
@@ -86,12 +94,12 @@ class ItemsViewController: UITableViewController  {
     }
     
     //Silver Challenge
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?{
-        if section == 0 {
-            return "No More Items"
-        }
-        return ""
-    }
+//    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?{
+//        if section == 0 {
+//            return "No More Items"
+//        }
+//        return ""
+//    }
     
     //GOLD Challenge
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
