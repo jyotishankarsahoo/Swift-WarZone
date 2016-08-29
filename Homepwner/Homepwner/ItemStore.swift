@@ -13,16 +13,6 @@ class ItemStore {
     var allItems = [Item]()
     var sortedItems = [Item]()
     
-//    init(){
-//        for _ in 0..<5 {
-//            self.createItem()
-//        }
-//        sortedItems = allItems.sort({ (x, y) -> Bool in
-//          return  x.valueInDollar < y.valueInDollar
-//        })
-//        
-//    }
-    
     func createItem() -> Item {
         let newItem = Item(random : true)
         allItems.append(newItem)
