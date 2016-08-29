@@ -12,13 +12,13 @@ class Item: NSObject {
     var name : String
     var valueInDollar : Double
     var serialNumber : String?
-    let dateCreated : NSDate
+    var dateCreated : NSDate
     
-    init(name : String, valueInDollar : Double, serialNumber : String?) {
+    init(name : String, valueInDollar : Double, serialNumber : String?,dateCreated : NSDate) {
         self.name = name
         self.valueInDollar = valueInDollar
         self.serialNumber = serialNumber
-        dateCreated = NSDate()
+        self.dateCreated = dateCreated
         super.init()
     }
     
@@ -33,10 +33,10 @@ class Item: NSObject {
             let randomName = "\(randomAdjectives)\(randomNoun)"
             let randomValue = Double(arc4random_uniform(100))
             let randomSerialNumber = NSUUID().UUIDString.componentsSeparatedByString("-").first
-            self.init(name : randomName , valueInDollar: randomValue , serialNumber : randomSerialNumber)
+            self.init(name : randomName , valueInDollar: randomValue , serialNumber : randomSerialNumber , dateCreated: NSDate())
             
         }else{
-            self.init(name : "" , valueInDollar: 0 , serialNumber: nil)
+            self.init(name : "" , valueInDollar: 0 , serialNumber: nil ,dateCreated: NSDate())
         }
     }
 }

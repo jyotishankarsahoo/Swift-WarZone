@@ -11,7 +11,6 @@ import Foundation
 class ItemStore {
     
     var allItems = [Item]()
-    var sortedItems = [Item]()
     
     func createItem() -> Item {
         let newItem = Item(random : true)

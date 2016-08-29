@@ -13,15 +13,15 @@ class ItemsViewController: UITableViewController  {
     //var itemLessThanFive : Array<Item>?
     //var itemMoreThanFive : Array<Item>?
     
-    @IBAction func toggleEditMode(sender : UIButton){
-        if editing {
-            sender.setTitle("Edit", forState: .Normal)
-            setEditing(false, animated: true)
-        }else{
-            sender.setTitle("Done", forState: .Normal)
-            setEditing(true, animated: true)
-        }
-    }
+//    @IBAction func toggleEditMode(sender : UIButton){
+//        if editing {
+//            sender.setTitle("Edit", forState: .Normal)
+//            setEditing(false, animated: true)
+//        }else{
+//            sender.setTitle("Done", forState: .Normal)
+//            setEditing(true, animated: true)
+//        }
+//    }
     
     @IBAction func addItem(sender : UIButton){
         let newItem = itemStore.createItem()
@@ -36,11 +36,21 @@ class ItemsViewController: UITableViewController  {
         super.viewDidLoad()
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
         let insects = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
-        tableView.contentInset = insects
+//        tableView.contentInset = insects
         tableView.scrollIndicatorInsets = insects
         tableView.backgroundColor = UIColor.brownColor()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     //MARK: - Data source delegate method overriden
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +90,7 @@ class ItemsViewController: UITableViewController  {
 
         }else{
            // cell.nameLabel?.font = cell.nameLabel?.font.fontWithSize(15)
-            
+            cell.userInteractionEnabled = false
             cell.nameLabel.text = "No More Items!"
             cell.serialNumberLabel.text = ""
             cell.valueLabel.text = ""
@@ -146,4 +156,15 @@ class ItemsViewController: UITableViewController  {
         }
         return canMove
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowItem" {
+            if let row = tableView.indexPathForSelectedRow?.row where itemStore.allItems.count > 0{
+                let item = itemStore.allItems[row]
+                let destinationViewController = segue.destinationViewController as! DetailedViewController
+                destinationViewController.item = item
+            }
+        }
+    }
+
 }
