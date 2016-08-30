@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class ItemsViewController: UITableViewController  {
     var itemStore : ItemStore!
+    var imageStore : ImageStore!
     //var itemLessThanFive : Array<Item>?
     //var itemMoreThanFive : Array<Item>?
     
@@ -125,6 +126,7 @@ class ItemsViewController: UITableViewController  {
             
             let deleteAction = UIAlertAction(title: "Remove", style: .Destructive, handler: { (action) in
                 self.itemStore.removeItem(self.itemStore.allItems[indexPath.row])
+                self.imageStore.deleteImage(forKey: self.itemStore.allItems[indexPath.row].itemKey)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 
             })
@@ -163,6 +165,7 @@ class ItemsViewController: UITableViewController  {
                 let item = itemStore.allItems[row]
                 let destinationViewController = segue.destinationViewController as! DetailedViewController
                 destinationViewController.item = item
+                destinationViewController.imageStore = imageStore
             }
         }
     }

@@ -190,6 +190,12 @@
                                             <action selector="takePicture:" destination="QHt-YK-7Ew" id="dfA-4e-EE2"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BQx-gB-AvI"/>
+                                    <barButtonItem style="plain" systemItem="trash" id="IJM-PX-0IK">
+                                        <connections>
+                                            <action selector="removeImage:" destination="QHt-YK-7Ew" id="Rg3-cZ-J1Q"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

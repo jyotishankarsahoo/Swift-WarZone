@@ -22,6 +22,8 @@ class DetailedViewController: UIViewController , UITextFieldDelegate ,UINavigati
         }
     }
     
+    var imageStore : ImageStore!
+    
     let numberFormatter : NSNumberFormatter = {
         let formatter = NSNumberFormatter()
         formatter.minimumFractionDigits = 2
@@ -45,6 +47,10 @@ class DetailedViewController: UIViewController , UITextFieldDelegate ,UINavigati
             serialNumberLabel.text = rowItem.serialNumber
             valueLabel.text = numberFormatter.stringFromNumber(rowItem.valueInDollar)
             dateLabel.text = dateFormatter.stringFromDate(rowItem.dateCreated)
+            let key = item?.itemKey
+            if let imageData =  imageStore.getImage(forKey: key!){
+                imageView.image = imageData
+            }
         }
     }
     
@@ -79,21 +85,48 @@ class DetailedViewController: UIViewController , UITextFieldDelegate ,UINavigati
     }
     
     @IBAction func takePicture(sender: UIBarButtonItem) {
-        
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.Camera){
             imagePicker.sourceType = .Camera
+            //Gold Challenge Add a cross hair view in the middle of the image capture area.
+            imagePicker.cameraOverlayView = CustomCrossHairView(frame: self.view.bounds)
+
         }else{
             imagePicker.sourceType = .PhotoLibrary
+
         }
         imagePicker.delegate = self
-        
+        imagePicker.allowsEditing = true
         presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func removeImage(sender : UIBarButtonItem){
+        //Silver Challenge : Removing Image
+        guard imageStore.getImage(forKey: (item?.itemKey)!) != nil else{
+            return
+        }
+        
+        let title = item?.name
+        let deleteConformationAlert =  UIAlertController(title: "Image - \(title!)", message: "Do you want to remove Image for item \(title!)", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        deleteConformationAlert.addAction(cancelAction)
+        let deleteAction = UIAlertAction(title: "delete", style: .Destructive) { (action) in
+            if let key = self.item?.itemKey{
+                self.imageStore.deleteImage(forKey: key)
+                self.imageView.image = nil
+            }
+        }
+        deleteConformationAlert.addAction(deleteAction)
+        presentViewController(deleteConformationAlert, animated: true, completion: nil)
+       
+    }
+    
     //MARK: - ImagePicker Delegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
-        let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //Bronze Challenge : Using Edited Image
+        let pickedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         imageView.image = pickedImage
+        imageStore.setImage(pickedImage, forkey: (item?.itemKey)!)
         dismissViewControllerAnimated(true, completion: nil)
     }
    
@@ -104,7 +137,6 @@ class DetailedViewController: UIViewController , UITextFieldDelegate ,UINavigati
     }
 
     // MARK: - Navigation
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UpdateDate" {
             let destinationViewController =  segue.destinationViewController as! DateUpdateViewController
