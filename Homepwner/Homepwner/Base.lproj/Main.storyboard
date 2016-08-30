@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Homepwner-->
@@ -87,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-XF-ePz">
-                                <rect key="frame" x="0.0" y="64" width="600" height="584"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="484"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="37h-IL-KFz">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
@@ -146,42 +147,72 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-pN-aRi">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="470"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-pN-aRi">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-zi-ySP">
-                                                <rect key="frame" x="249" y="0.0" width="102" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date Created" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-zi-ySP">
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0K-Ew-fxc">
-                                                <rect key="frame" x="255" y="21" width="90" height="449"/>
-                                                <state key="normal" title="Change Date"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mr7-qm-95o">
+                                                <rect key="frame" x="360" y="0.0" width="240" height="30"/>
+                                                <state key="normal" title="Update"/>
                                                 <connections>
-                                                    <segue destination="Qg0-pX-xtr" kind="show" identifier="UpdateDate" id="GT7-5S-6dr"/>
+                                                    <segue destination="Qg0-pX-xtr" kind="show" identifier="UpdateDate" id="FRf-RG-w5d"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Mr7-qm-95o" firstAttribute="width" secondItem="hzH-pN-aRi" secondAttribute="width" multiplier="40%" id="Erp-Vw-EJg"/>
+                                            <constraint firstItem="MM6-zi-ySP" firstAttribute="height" secondItem="Mr7-qm-95o" secondAttribute="height" id="mea-O5-FoW"/>
+                                        </constraints>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="240" verticalCompressionResistancePriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-uU-XRa">
+                                        <rect key="frame" x="0.0" y="152" width="600" height="332"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="twU-dM-oNU" firstAttribute="leading" secondItem="YCf-Sm-N7H" secondAttribute="leading" id="GWT-MS-qKC"/>
                                     <constraint firstItem="YCf-Sm-N7H" firstAttribute="leading" secondItem="dCY-gl-MOz" secondAttribute="leading" id="a4n-sX-Tpn"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBw-YU-Sn7">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="AO4-1H-1jZ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="ojt-dP-EoH">
+                                        <connections>
+                                            <action selector="takePicture:" destination="QHt-YK-7Ew" id="dfA-4e-EE2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DBw-YU-Sn7" firstAttribute="leading" secondItem="KPn-EV-hTM" secondAttribute="leading" id="BUv-yx-TVk"/>
                             <constraint firstAttribute="trailing" secondItem="d1p-XF-ePz" secondAttribute="trailing" id="G46-9U-o1m"/>
                             <constraint firstItem="d1p-XF-ePz" firstAttribute="leading" secondItem="KPn-EV-hTM" secondAttribute="leading" id="GMj-T6-uG3"/>
                             <constraint firstItem="fYA-1Z-25G" firstAttribute="top" secondItem="d1p-XF-ePz" secondAttribute="bottom" constant="-48" id="VtR-bK-KCc"/>
+                            <constraint firstItem="fYA-1Z-25G" firstAttribute="top" secondItem="DBw-YU-Sn7" secondAttribute="bottom" id="aCc-LU-3Ax"/>
+                            <constraint firstItem="DBw-YU-Sn7" firstAttribute="top" secondItem="d1p-XF-ePz" secondAttribute="bottom" constant="8" id="hG3-On-0Eq"/>
+                            <constraint firstAttribute="trailing" secondItem="DBw-YU-Sn7" secondAttribute="trailing" id="seS-ON-9ME"/>
                             <constraint firstItem="d1p-XF-ePz" firstAttribute="top" secondItem="KPn-EV-hTM" secondAttribute="top" constant="64" id="xKc-qQ-uQO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VtR-bK-KCc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="MM6-zi-ySP" id="2xg-Ia-N4K"/>
+                        <outlet property="imageView" destination="D0d-uU-XRa" id="cLo-sp-STk"/>
                         <outlet property="nameLabel" destination="fSX-kK-wy2" id="JSC-lX-dbj"/>
                         <outlet property="serialNumberLabel" destination="gOq-oj-fuO" id="aXM-RL-NY5"/>
                         <outlet property="valueLabel" destination="jeM-8E-bs0" id="POs-9m-mFJ"/>

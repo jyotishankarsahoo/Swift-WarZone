@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DetailedViewController: UIViewController , UITextFieldDelegate{
+class DetailedViewController: UIViewController , UITextFieldDelegate ,UINavigationControllerDelegate , UIImagePickerControllerDelegate{
 
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var serialNumberLabel: UITextField!
     @IBOutlet weak var valueLabel: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet var imageView : UIImageView!
     
     var item : Item?{
         didSet{
@@ -36,6 +37,7 @@ class DetailedViewController: UIViewController , UITextFieldDelegate{
         return formatter
     }()
     
+    //MARK: - View Life Cycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let rowItem = item{
@@ -56,7 +58,6 @@ class DetailedViewController: UIViewController , UITextFieldDelegate{
         }else{
             item?.valueInDollar = 0
         }
-        
         if  let dateText = dateLabel.text , value = dateFormatter.dateFromString(dateText){
             item?.dateCreated = value
         }else{
@@ -66,19 +67,37 @@ class DetailedViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
+    //MARK: - IBAction
     @IBAction func backGroundViewTapped(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func takePicture(sender: UIBarButtonItem) {
+        
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.Camera){
+            imagePicker.sourceType = .Camera
+        }else{
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    //MARK: - ImagePicker Delegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = pickedImage
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+   
+    //MARK: - Textfield Delegate
      func textFieldShouldReturn(textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
