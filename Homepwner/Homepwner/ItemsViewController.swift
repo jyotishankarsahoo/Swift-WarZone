@@ -125,8 +125,8 @@ class ItemsViewController: UITableViewController  {
             userAlert.addAction(cancelAction)
             
             let deleteAction = UIAlertAction(title: "Remove", style: .Destructive, handler: { (action) in
-                self.itemStore.removeItem(self.itemStore.allItems[indexPath.row])
                 self.imageStore.deleteImage(forKey: self.itemStore.allItems[indexPath.row].itemKey)
+                self.itemStore.removeItem(self.itemStore.allItems[indexPath.row])
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 
             })
