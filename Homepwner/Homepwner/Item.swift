@@ -8,12 +8,34 @@
 
 import Foundation
 
-class Item: NSObject {
+
+class Item: NSObject,NSCoding {
     var name : String
     var valueInDollar : Double
     var serialNumber : String?
     var dateCreated : NSDate
     let itemKey : String
+    
+     func encodeWithCoder(aCoder: NSCoder){
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeObject(serialNumber, forKey: "serialNumber")
+        aCoder.encodeObject(itemKey, forKey: itemKey)
+        aCoder.encodeDouble(valueInDollar, forKey: "valueInDollar")
+        aCoder.encodeObject(dateCreated, forKey: "dateCreated")
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        name = aDecoder.decodeObjectForKey("name") as! String
+        dateCreated = aDecoder.decodeObjectForKey("dateCreated") as! NSDate
+        if let key = aDecoder.decodeObjectForKey("itemKey"){
+            itemKey = key as! String
+        }else{
+            itemKey = "123"
+        }
+        serialNumber = aDecoder.decodeObjectForKey("serialNumber") as? String
+        valueInDollar = aDecoder.decodeDoubleForKey("valueInDollar")
+        super.init()
+    }
     
     init(name : String, valueInDollar : Double, serialNumber : String?,dateCreated : NSDate) {
         self.name = name
