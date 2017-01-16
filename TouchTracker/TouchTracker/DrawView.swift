@@ -15,9 +15,27 @@ class DrawView: UIView {
     var finishedLine = [Line]()
     var currentLines = [NSValue : Line]()
     
+    @IBInspectable var finishedLineColor : UIColor = UIColor.black{
+        didSet{
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var currentLineColor : UIColor = UIColor.red{
+        didSet{
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var lineThickness : CGFloat = 5{
+        didSet{
+        setNeedsDisplay()
+        }
+    }
+    
     func strokeLine(line : Line){
         let path = UIBezierPath()
-        path.lineWidth = 5
+        path.lineWidth = lineThickness
         path.lineCapStyle = CGLineCap.round
         path.move(to: line.begin)
         path.addLine(to: line.end)
@@ -37,11 +55,11 @@ class DrawView: UIView {
         }
          */
         // Multiple touches
-        UIColor.black.setStroke()
+        finishedLineColor.setStroke()
         for line in finishedLine {
             self.strokeLine(line: line)
         }
-        UIColor.red.setStroke()
+        currentLineColor.setStroke()
         for ( _,line) in currentLines{
             self.strokeLine(line: line)
         }
