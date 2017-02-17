@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ConcurrencyDemoSwift3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-F1-At4">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="skz-JJ-fSJ">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ds-fM-rHu"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lrc-bI-BSP"/>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-Fn-itD">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZdH-q7-vp8"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bem-ue-EsH"/>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7Yc-Fn-itD" secondAttribute="trailing" id="4tY-QH-E5d"/>
+                                    <constraint firstItem="skz-JJ-fSJ" firstAttribute="top" secondItem="XgI-F1-At4" secondAttribute="top" id="Nm2-oD-gSB"/>
+                                    <constraint firstItem="7Yc-Fn-itD" firstAttribute="top" secondItem="skz-JJ-fSJ" secondAttribute="bottom" id="PMP-hY-sgI"/>
+                                    <constraint firstItem="7Yc-Fn-itD" firstAttribute="top" secondItem="skz-JJ-fSJ" secondAttribute="bottom" id="PeP-LY-WwM"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Yc-Fn-itD" secondAttribute="bottom" id="Vie-3s-v3h"/>
+                                    <constraint firstAttribute="width" constant="344" id="VpY-M0-YAN"/>
+                                    <constraint firstAttribute="trailing" secondItem="skz-JJ-fSJ" secondAttribute="trailing" id="f2V-9B-mgP"/>
+                                    <constraint firstItem="7Yc-Fn-itD" firstAttribute="leading" secondItem="XgI-F1-At4" secondAttribute="leading" id="oAf-D9-Qbz"/>
+                                    <constraint firstItem="skz-JJ-fSJ" firstAttribute="leading" secondItem="XgI-F1-At4" secondAttribute="leading" id="sg9-7Q-3Or"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQR-Td-SZa">
+                                <state key="normal" title="Main"/>
+                                <connections>
+                                    <action selector="mainClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="25M-zA-BWQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-bb-ONY">
+                                <state key="normal" title="Operation"/>
+                                <connections>
+                                    <action selector="operationClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ts-6G-dYK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvO-Xc-4H4">
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4O2-uy-G3h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga3-sL-dbw">
+                                <state key="normal" title="GCD"/>
+                                <connections>
+                                    <action selector="gcdClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSs-G1-O1i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FMQ-bb-ONY" firstAttribute="baseline" secondItem="pvO-Xc-4H4" secondAttribute="baseline" id="5fA-Qp-2Yh"/>
+                            <constraint firstItem="XgI-F1-At4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="8pm-Wf-IFW"/>
+                            <constraint firstItem="XgI-F1-At4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="CvB-WZ-WDE"/>
+                            <constraint firstItem="ga3-sL-dbw" firstAttribute="baseline" secondItem="FMQ-bb-ONY" secondAttribute="baseline" id="I99-RO-aGx"/>
+                            <constraint firstItem="pvO-Xc-4H4" firstAttribute="leading" secondItem="FMQ-bb-ONY" secondAttribute="trailing" constant="50" id="LtS-Ph-rWZ"/>
+                            <constraint firstItem="pvO-Xc-4H4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PcA-Jo-mNQ"/>
+                            <constraint firstItem="XgI-F1-At4" firstAttribute="top" secondItem="bQR-Td-SZa" secondAttribute="bottom" constant="8" symbolic="YES" id="RmD-Ui-vab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XgI-F1-At4" secondAttribute="bottom" constant="9" id="TIB-bh-cPI"/>
+                            <constraint firstItem="ga3-sL-dbw" firstAttribute="leading" secondItem="bQR-Td-SZa" secondAttribute="trailing" constant="58" id="UmJ-4h-hKc"/>
+                            <constraint firstItem="bQR-Td-SZa" firstAttribute="baseline" secondItem="ga3-sL-dbw" secondAttribute="baseline" id="bhu-G3-umG"/>
+                            <constraint firstAttribute="trailing" secondItem="XgI-F1-At4" secondAttribute="trailing" constant="15" id="fIb-sy-HAf"/>
+                            <constraint firstItem="FMQ-bb-ONY" firstAttribute="leading" secondItem="ga3-sL-dbw" secondAttribute="trailing" constant="46" id="jzP-C5-5WW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView1" destination="1Ds-fM-rHu" id="3ZA-uY-6OY"/>
+                        <outlet property="imageView2" destination="Lrc-bI-BSP" id="tfL-DU-3qm"/>
+                        <outlet property="imageView3" destination="ZdH-q7-vp8" id="mYl-h6-PtS"/>
+                        <outlet property="imageView4" destination="Bem-ue-EsH" id="ibY-Xl-eo0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
